@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"}) 
+@JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer" })
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 4361695659092563547L;

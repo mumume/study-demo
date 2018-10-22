@@ -25,14 +25,14 @@ public class PersonServiceImpl implements DemoService {
 	}
 
 	@Override
-	@CacheEvict(value = "person")
+	@CacheEvict(value = "people")
 	public void remove(Long id) {
 		System.out.println("删除了id、key为" + id + "的数据缓存");
 		personRepository.deleteById(id);
 	}
 
 	@Override
-	@Cacheable(value = "person", key = "#person.id")
+	@Cacheable(value = "people", key = "#person.id")
 	public Person findOne(Person person) {
 		Person p = personRepository.getOne(person.getId());
 		System.out.println("为id、key为：" + p.getId() + "数据做了缓存");
